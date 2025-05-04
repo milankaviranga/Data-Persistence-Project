@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class MainManager : MonoBehaviour
 {
     public Brick BrickPrefab;
-    public int LineCount = 6;
+
+    // ENCAPSULATION
+    public int LineCount { get; private set; }
+
     public Rigidbody Ball;
 
     public Text ScoreText;
@@ -26,6 +29,8 @@ public class MainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LineCount = 6;
+
         ShowBestScoreText();
 
         const float step = 0.6f;
@@ -68,12 +73,14 @@ public class MainManager : MonoBehaviour
         }
     }
 
+    //ABSTRACTION
     void AddPoint(int point)
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
     }
 
+    //ABSTRACTION
     public void GameOver()
     {
         m_GameOver = true;
@@ -84,6 +91,7 @@ public class MainManager : MonoBehaviour
 
     }
 
+    //ABSTRACTION
     private void SetBestScoreText() {
 
         bestScoreString = "Best Score : " + DataManager.Instance.playerName + " : " + DataManager.Instance.bestScore;
@@ -92,6 +100,7 @@ public class MainManager : MonoBehaviour
 
     }
 
+    //ABSTRACTION
     private void checkBestScore() {
 
         if (m_Points>DataManager.Instance.bestScore) {
@@ -106,10 +115,13 @@ public class MainManager : MonoBehaviour
 
     }
 
+
+    //ABSTRACTION
     private void ShowBestScoreText() {
 
         PlayerHighestScore.text = DataManager.Instance.bestScoreText;
 
     }
+
 
 }

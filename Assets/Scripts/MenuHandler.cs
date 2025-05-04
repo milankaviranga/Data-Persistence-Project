@@ -6,6 +6,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//INHERITANCE
 public class MenuHandler : MonoBehaviour
 {
 

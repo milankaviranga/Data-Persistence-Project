@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+//INHERITANCE
 public class PlayerInputManager : MonoBehaviour
 {
 
